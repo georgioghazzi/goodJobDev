@@ -36,11 +36,11 @@
           <ul class="navbar-nav ml-auto">
               
               <li class="nav-item ">
-                  <a class="nav-link text-blue" href="dwp.html">DWP</a>
+                  <a class="nav-link text-blue" href="dwp.php">DWP</a>
                 </li>
                 <div class="line"></div>
             <li class="nav-item  ">
-              <a class="nav-link" href="Login.html">Log In</a>
+              <a class="nav-link" href="Login.php">Log In</a>
             </li>
            
 
