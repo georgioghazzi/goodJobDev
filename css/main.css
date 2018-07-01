@@ -513,7 +513,7 @@ iframe {
 .grad-btn{
   color:#ED5564;
   border-radius: 30px;
-  width: 300%;
+  width: 100%;
   height: 50px;
   cursor: pointer;
   font-size: 20px;
@@ -544,6 +544,39 @@ iframe {
   background-position: 0;
 }
 
+.grad-btn-vote{
+  color:#ED5564;
+  border-radius: 30px;
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #fff;
+  border:1px solid #ED5564;
+  background-image: linear-gradient(45deg, #ED5564 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  transition: background 300ms ease-in-out;
+  margin-top:40px;
+}
+.grand-btn-vote:after{
+  background-color:linear-gradient(45deg, #ED5564 50%, transparent 50%);
+  border-color:#ED5564;
+
+}
+.grad-btn-vote:hover{
+  color:#fff;
+  background-position: 0;
+}
+.grad-btn-vote:active{
+  color:#fff;
+  background-position: 0;
+}
+.grad-btn-vote:focus{
+  color:#fff;
+  background-position: 0;
+}
 .login100-form-btn {
   
   font-family: Poppins-Medium;
@@ -568,7 +601,21 @@ iframe {
   left: 0;
 }
 
-
+.select-vote{
+  margin-top:10px;
+  width: 100%;
+  height:3rem;
+  font-size:20px;
+  padding-left:20%;
+  background-color:#ED5564;
+  color:#fff;
+  border:1px solide #ED5564;
+  box-shadow:none;
+  outline:0;
+  appearance: none;
+  border:0!important;
+  
+}
 /*------------------------------------------------------------------
 [ Responsive ]*/
 

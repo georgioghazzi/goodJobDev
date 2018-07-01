@@ -39,18 +39,19 @@
 	<div class="limiter" >
 		<div class="container-login100">
 			<div class="wrap-login100" id="box">
-            <span class="login100-form-title p-b-18">
+				<!-- <form class="login100-form" method="post" id="login-form"> -->
+				<form class="form-signin" method="post" id="login-form">
+				<span class="login100-form-title p-b-18">
 						<img src="images/img/DWP.gif" style="width:90%; margin-top:10%">
 					</span>
 					<span class="login100-form-title p-b-10">
 						Please Vote
 					</span>
 					
-					<div id="error"></div>
-					<br>
 
-					<div class="wrap-input100 validate-input">
-						<select class="input100" name="votes" id="votes">
+
+					
+						<select  class="select-vote" name="votes" id="votes">
                         <option>Charbel Keyrouz</option>
                         <option>Antho Khalife</option>
                         <option>Caline Achkar</option>
@@ -61,9 +62,45 @@
                         <option>Marc Antoun</option>
                         <option>Maro Antoun</option>
                         <option>Ramez Hachem</option>
-                    </div>
-
-  					<div class="container-login100-form-btn">
-					<input type="submit" class="grad-btn" name="btn-vote" id="btn-vote" value="Vote">
+					
+					
+					<div id="error"></div>
+					
+					
+					<input type="submit" class="grad-btn-vote" name="btn-vote" id="btn-vote" value="Vote">
     				
+							
+						</form>
 					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+
+	<!--===============================================================================================-->
+		<script src="vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+		<script src="vendor/bootstrap/js/popper.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+		<script src="vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+		<script src="vendor/daterangepicker/moment.min.js"></script>
+		<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+		<script src="vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+		<script src="js/main.js"></script>
+	
+</html>
+
+<script>
+
+</script>
+
+
+
+	
