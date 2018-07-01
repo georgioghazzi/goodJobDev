@@ -1,13 +1,6 @@
-<?php
-//index.php
-session_start();
-if(isset($_SESSION["username"]))
-{
- header("location:home.php");
-}
-?>
+
 <head>
-	<title>Login</title>
+	<title>DWP</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -40,25 +33,27 @@ if(isset($_SESSION["username"]))
   src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
   integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
   crossorigin="anonymous"></script>
-
+  <script type="text/javascript" src="js/validation.min.js"></script>
 </head>
  <body background="">
 	
 	<div class="limiter" >
 		<div class="container-login100">
 			<div class="wrap-login100" id="box">
-				<form class="login100-form validate-form" method="post">
-				<span class="login100-form-title p-b-48">
-						<img src="images/img/DWP.gif" style="width:90%">
+				<!-- <form class="login100-form" method="post" id="login-form"> -->
+				<form class="form-signin" method="post" id="login-form">
+				<span class="login100-form-title p-b-18">
+						<img src="images/img/DWP.gif" style="width:90%; margin-top:10%">
 					</span>
-					<span class="login100-form-title p-b-26">
+					<span class="login100-form-title p-b-10">
 						Please Sign In
 					</span>
-					<br>
 					
+					<div id="error"></div>
+					<br>
 
 					<div class="wrap-input100 validate-input">
-						<input class="input100" type="text" name="User_login" id="username">
+						<input class="input100" type="text" name="user_name" id="user_name">
 						<span class="focus-input100" data-placeholder="Username"></span>
 					</div>
 
@@ -66,30 +61,34 @@ if(isset($_SESSION["username"]))
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="input100" type="password" name="Password_login" id="password">
+						<input class="input100" type="password" name="password" id="password">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
-					<input type="button" class="grad-btn" id="login" value="Login">
-						<div id="error"></div>
+					<input type="submit" class="grad-btn" name="btn-login" id="btn-login" value="Login">
+    				
 					</div>
 
-					<div class="text-center p-t-115">
+					<div class="text-center p-t-20">
+					<a class="txt2" href="forget.php">
+						Forgot Your Password?
+						</a><br>
 						<span class="txt1">
 							Don’t have an account?
 						</span>
 
-						<a class="txt2" href="#">
+						<a class="txt2" href="signup.php">
 							Sign Up
 						</a>
+					
 						</form>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-	<div id="dropDownSelect1"></div>
+	
 	
 	
 
@@ -111,51 +110,5 @@ if(isset($_SESSION["username"]))
 </html>
 
 <script>
-$(document).ready(function(){
- $('#login').click(function(){
-	var options = {
-       distance: '5',
-       direction:'left',
-       times:'3'
-      }
-  var User = $('#username').val();
-  var Pass = $('#password').val();
-  if(User.length > 0 && Pass.length > 0)
-  {
-	
-   $.ajax({
-	 
-    url:"login.php",
-    method:"POST",
-    data:{User:User, Pass:Pass},
-    cache:false,
-    beforeSend:function(){
-     $('#login').val("connecting...");
-    },
-    success:function(data)
-    {
-     if(data)
-     {
-		$("body").load("vote.php").hide().fadeIn(1500);
 
-     }
-     else
-     {
-      
-	  $("#box").effect("shake", options, 800);
-      $('#login').val("Login");
-      $('#error').html("<span class='text-danger small'>Invalid username or Password\</span>");
-	  $('#password').val('');	 
-     }
-    }
-   });
-  }
-  else
-  {
-	$("#box").effect("shake", options, 800);
-      $('#login').val("Login");
-      $('#error').html("<span class='text-danger small'>Please Enter Your Username And Password.</span>");
-  }
- });
-});
 </script>

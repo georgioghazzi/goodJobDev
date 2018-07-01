@@ -1,4 +1,89 @@
 
+
+
+$('document').ready(function()
+{ 
+/* validation */
+$("#login-form").validate({
+    rules:
+    {
+    password: {
+    required: true,
+    },
+    user_name: {
+    required: true,
+    },
+    },
+    errorPlacement: function(error,element) {
+        return true;
+      },
+    invalidHandler: shakeIt,
+    submitHandler: submitForm	
+    });  
+      /* validation */
+
+/* login submit */
+function submitForm()
+{		
+    var options = {
+        distance: '5',
+        direction:'left',
+        times:'3'
+       }
+        
+    
+var data = $("#login-form").serialize();
+
+        $.ajax({
+
+            type : 'POST',
+            url  : 'login.php',
+            data : data,
+            beforeSend: function()
+            {	
+                $('#login').val("connecting...");
+            },
+            success :  function(response)
+            {						
+                    if($.trim(response)== 'ok'){
+                        $('document').attr("title", "Voting");  
+                        $("body").load("vote.php").hide().fadeIn(1500);
+                       
+            
+            
+                    }
+                    else{
+            
+                        $("#box").effect("shake", options, 800);
+                        $('#login').val("Login");
+                        $('#error').html("<span class='text-danger small'>Invalid username or Password \</span>");
+                        $('#password').val('');	 
+                    }
+            }
+            });
+       } 
+
+
+return false;
+});
+/* login submit */
+
+
+
+function shakeIt(){
+    var options = {
+        distance: '5',
+        direction:'left',
+        times:'3'
+       }
+   
+    $("#box").effect("shake", options, 800);
+    $('#login').val("Login");
+    $('#error').html("<span class='text-danger small'>Please Enter Username And Password \</span>");
+    $('#user_name').val('');
+    $('#password').val('');	   
+}
+
 (function ($) {
     "use strict";
 
@@ -41,30 +126,6 @@
         });
     });
 
-    function validate (input) {
-        if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
-            if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
-                return false;
-            }
-        }
-        else {
-            if($(input).val().trim() == ''){
-                return false;
-            }
-        }
-    }
-
-    function showValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).addClass('alert-validate');
-    }
-
-    function hideValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).removeClass('alert-validate');
-    }
     
     /*==================================================================
     [ Show pass ]*/
@@ -87,7 +148,4 @@
 
 
 })(jQuery);
-
-
-//Contact 
 

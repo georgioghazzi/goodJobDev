@@ -2,19 +2,38 @@
 <?php
 //login.php
 session_start();
-$connect = mysqli_connect("50.62.209.112:3306", "dwp", "2392129040", "DWP-DB");
-if(isset($_POST["User"]) && isset($_POST["Pass"]))
+require_once 'dbconfig.php';
+
+if(isset($_POST['btn-login']))
 {
- $User = mysqli_real_escape_string($connect, $_POST["User"]);
- $Pass = md5(mysqli_real_escape_string($connect, $_POST["Pass"]));
- $sql = "SELECT * FROM `login-dwp` WHERE User = '".$User."' AND Pass = '".$Pass."'";
- $result = mysqli_query($connect, $sql);
- $num_row = mysqli_num_rows($result);
- if($num_row > 0)
- {
-  $data = mysqli_fetch_array($result);
-  $_SESSION["User"] = $data["User"];
-  echo $data["User"];
- }
+
+$user_name=$_POST['user_name'];
+$password=$_POST['password'];
+
+
+try
+{	
+
+$stmt = $db->prepare("SELECT * FROM `login-dwp` WHERE User=:user_name");
+$stmt->execute(array(":user_name"=>$user_name));
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+$count = $stmt->rowCount();
+
+if($row['Pass']==$password){
+
+echo "ok"; // log in
+
+
 }
+else{
+
+echo "Username or password does not exist."; // wrong details 
+}
+
+}
+catch(PDOException $e){
+echo $e->getMessage();
+}
+}
+
 ?>

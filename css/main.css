@@ -333,8 +333,8 @@ iframe {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  padding: 77px 55px 33px 55px;
-
+  padding: 0px 55px 33px 55px;
+  
   box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
@@ -348,6 +348,7 @@ iframe {
 
 .login100-form {
   width: 100%;
+ 
 }
 
 .login100-form-title {
@@ -370,7 +371,7 @@ iframe {
   width: 100%;
   position: relative;
   border-bottom: 2px solid #adadad;
-  margin-bottom: 37px;
+  margin-bottom: 27px;
 }
 
 .input100 {
@@ -411,11 +412,10 @@ iframe {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 
-  background: #6a7dfe;
-  background: -webkit-linear-gradient(left, #21d4fd, #b721ff);
-  background: -o-linear-gradient(left, #21d4fd, #b721ff);
-  background: -moz-linear-gradient(left, #21d4fd, #b721ff);
-  background: linear-gradient(left, #21d4fd, #b721ff);
+;
+  background: #ED5564;
+  background: -webkit-linear-gradient(left, #ED5564 50%,transparent);
+  
 }
 
 .focus-input100::after {
@@ -440,6 +440,7 @@ iframe {
 
 .input100:focus + .focus-input100::after {
   top: -15px;
+  font-size:15px;
 }
 
 .input100:focus + .focus-input100::before {
@@ -448,6 +449,7 @@ iframe {
 
 .has-val.input100 + .focus-input100::after {
   top: -15px;
+  font-size:15px;
 }
 
 .has-val.input100 + .focus-input100::before {
@@ -503,26 +505,47 @@ iframe {
   margin: 0 auto;
 }
 
+#error{
+  height: 20px;
+  text-align: center;
+}
 
 .grad-btn{
-  color:#fff;
+  color:#ED5564;
   border-radius: 30px;
   width: 300%;
   height: 50px;
   cursor: pointer;
   font-size: 20px;
   font-weight: bold;
-  border-color: #f1c40f;
-  background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-color: #fff;
+  border:1px solid #ED5564;
+  background-image: linear-gradient(45deg, #ED5564 50%, transparent 50%);
   background-position: 100%;
   background-size: 400%;
   transition: background 300ms ease-in-out;
+  
+}
+.grand-btn:after{
+  background-color:linear-gradient(45deg, #ED5564 50%, transparent 50%);
+  border-color:#ED5564;
+
 }
 .grad-btn:hover{
+  color:#fff;
+  background-position: 0;
+}
+.grad-btn:active{
+  color:#fff;
+  background-position: 0;
+}
+.grad-btn:focus{
+  color:#fff;
   background-position: 0;
 }
 
 .login100-form-btn {
+  
   font-family: Poppins-Medium;
   font-size: 15px;
   color: #fff;
