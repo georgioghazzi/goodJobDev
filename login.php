@@ -24,10 +24,12 @@ if($row['Pass']==$password){
 echo "ok"; // log in
 
 
+
 }
 else{
 
 echo "Username or password does not exist."; // wrong details 
+
 }
 
 }
@@ -37,3 +39,4 @@ echo $e->getMessage();
 }
 
 ?>
+

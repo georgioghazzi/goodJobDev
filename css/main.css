@@ -414,7 +414,7 @@ iframe {
 
 ;
   background: #ED5564;
-  background: -webkit-linear-gradient(left, #ED5564 50%,transparent);
+  background: -webkit-linear-gradient(left, #ED5564 100%);
   
 }
 

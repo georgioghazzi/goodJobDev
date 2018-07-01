@@ -56,7 +56,7 @@ var data = $("#login-form").serialize();
             
                         $("#box").effect("shake", options, 800);
                         $('#login').val("Login");
-                        $('#error').html("<span class='text-danger small'>Invalid username or Password \</span>");
+                        $('#error').html("<span class='text-danger small'>"+response+" \</span>");
                         $('#password').val('');	 
                     }
             }

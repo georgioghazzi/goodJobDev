@@ -40,7 +40,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100" id="box">
 				<!-- <form class="login100-form" method="post" id="login-form"> -->
-				<form class="form-signin" method="post" id="login-form">
+				<form  method="post" id="form-vote" >
 				<span class="login100-form-title p-b-18">
 						<img src="images/img/DWP.gif" style="width:90%; margin-top:10%">
 					</span>
@@ -51,17 +51,19 @@
 
 
 					
-						<select  class="select-vote" name="votes" id="votes">
-                        <option>Charbel Keyrouz</option>
-                        <option>Antho Khalife</option>
-                        <option>Caline Achkar</option>
-                        <option>Georges Keedy</option>
-                        <option>Jala Achkar</option>
-                        <option>Joe Hage</option>
-                        <option>Georgio Ghazzi</option>
-                        <option>Marc Antoun</option>
-                        <option>Maro Antoun</option>
-                        <option>Ramez Hachem</option>
+						<select  class="select-vote" name="Vote" id="vote" required>
+						<option value=""></option>
+						<option Value="Georgio">Georgio</option>
+						<option Value="Caline">Caline</option>
+						<option Value="Joe">Joe</option>
+						<option Value="Ramez">Ramez</option>
+						<option Value="Jalal">Jalal</option>
+						<option Value="Marc">Marc</option>
+						<option Value="Georges">Georges</option>
+						<option Value="Maro">Maro</option>
+						<option Value="Charbel">Charbel</option>
+						<option Value="Antho">Antho</option>
+						</Select>
 					
 					
 					<div id="error"></div>
@@ -96,11 +98,3 @@
 		<script src="js/main.js"></script>
 	
 </html>
-
-<script>
-
-</script>
-
-
-
-	
