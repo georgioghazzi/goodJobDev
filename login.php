@@ -9,7 +9,7 @@ if(isset($_POST['btn-login']))
 
 $user_name=$_POST['user_name'];
 $password=$_POST['password'];
-
+$_SESSION['User']=$user_name;
 
 try
 {	

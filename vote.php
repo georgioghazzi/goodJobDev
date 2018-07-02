@@ -52,17 +52,16 @@
 
 					
 						<select  class="select-vote" name="Vote" id="vote" required>
-						<option value=""></option>
-						<option Value="Georgio">Georgio</option>
-						<option Value="Caline">Caline</option>
-						<option Value="Joe">Joe</option>
-						<option Value="Ramez">Ramez</option>
-						<option Value="Jalal">Jalal</option>
-						<option Value="Marc">Marc</option>
-						<option Value="Georges">Georges</option>
-						<option Value="Maro">Maro</option>
-						<option Value="Charbel">Charbel</option>
-						<option Value="Antho">Antho</option>
+						<option Value="Georgio">Georgio Ghazzi</option>
+						<option Value="Caline">Caline Achkar</option>
+						<option Value="Joe">Joe Hage</option>
+						<option Value="Ramez">Ramez Hachem</option>
+						<option Value="Jalal">Jalal Achkar</option>
+						<option Value="Marc">Marc Antoun</option>
+						<option Value="Georges">Georges Keedy</option>
+						<option Value="Maro">Maro Antoun</option>
+						<option Value="Charbel">Charbel Keyrouz</option>
+						<option Value="Antho">Antho Khalifeh</option>
 						</Select>
 					
 					

@@ -41,7 +41,7 @@ var data = $("#login-form").serialize();
             data : data,
             beforeSend: function()
             {	
-                $('#login').val("connecting...");
+                $('#btn-login').val("Connecting...");
             },
             success :  function(response)
             {						
@@ -55,8 +55,8 @@ var data = $("#login-form").serialize();
                     else{
             
                         $("#box").effect("shake", options, 800);
-                        $('#login').val("Login");
-                        $('#error').html("<span class='text-danger small'>"+response+" \</span>");
+                        $('#btn-login').val("Login");
+                        $('#error').html("<span class='text-danger small'>Invalid username or Password \</span>");
                         $('#password').val('');	 
                     }
             }
@@ -78,7 +78,7 @@ function shakeIt(){
        }
    
     $("#box").effect("shake", options, 800);
-    $('#login').val("Login");
+    $('#btn-login').val("Login");
     $('#error').html("<span class='text-danger small'>Please Enter Username And Password \</span>");
     $('#user_name').val('');
     $('#password').val('');	   
@@ -149,3 +149,81 @@ function shakeIt(){
 
 })(jQuery);
 
+//Voting
+$('document').ready(function()
+{ 
+/* validation */
+$("#form-vote").validate({
+    rules:
+    {
+    select: {
+    required: true,
+    }
+
+    },
+    errorPlacement: function(error,element) {
+        return true;
+      },
+    invalidHandler: shakeIt2,
+    submitHandler: submitVote	
+    });  
+      /* validation */
+
+/* login submit */
+function submitVote()
+{		
+    var options = {
+        distance: '5',
+        direction:'left',
+        times:'3'
+       }
+        
+
+       var data = $("#form-vote").serialize();
+
+        $.ajax({
+
+            type : 'POST',
+            url  : 'do-vote.php',
+            data : data,
+            beforeSend: function()
+            {	
+                $('#btn-vote').val("Submitting  Vote..");
+            },
+            success :  function(response)
+            {						
+                    if($.trim(response)== 'ok'){
+                        $('#error').html("<span class='text-danger small'>"+response+"\</span>");
+                        // $('document').attr("title", "Voting");  
+                        // $("body").load("index.php").hide().fadeIn(1500);
+                       
+            
+            
+                    }
+                    else{
+            
+                        $("#box").effect("shake", options, 800);
+                        $('#btn-vote').val("Vote");
+                        $('#error').html("<span class='text-danger small'>"+response+"\</span>");
+                        $('#password').val('');	 
+                    }
+            }
+            });
+       } 
+
+
+return false;
+});
+function shakeIt2(){
+    var options = {
+        distance: '5',
+        direction:'left',
+        times:'3'
+       }
+   
+    $("#box").effect("shake", options, 800);
+    $('#btn-vote').val("Login");
+    $('#error').html("<span class='text-danger small'>Please Enter Username And Password \</span>");
+    $('#user_name').val('');
+    $('#password').val('');	   
+}
